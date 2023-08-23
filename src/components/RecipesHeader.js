@@ -1,10 +1,20 @@
 import { Link } from "react-router-dom";
-export default function RecipesHeader(){
-    return (
-        <div className="recipes-header">
-            <Link to="/favorites"><div>Favorites</div></Link>
-            <Link to="/catalog"><div>Catalog</div></Link>
-            <Link to="/"><img src={require('../assets/logo.jpg')}></img></Link>
-        </div>
-    );
+import React from "react";
+
+import "../assets/css/recipe-header.css";
+export default function RecipesHeader() {
+  return (
+    <div className="recipes-header">
+      <Link to="/">
+        <img
+          src={require("../assets/img/logo.jpg")}
+          className="recipes-header__logo"
+        />
+      </Link>
+      <nav className="recipes-header__nav">
+        <Link to="/favorites">Favorites</Link>
+        <Link to="/catalog">Catalog</Link>
+      </nav>
+    </div>
+  );
 }
