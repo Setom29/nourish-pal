@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import React from "react";
 
-import "../assets/css/recipe-header.css";
+import "../assets/css/recipes-header.css";
 export default function RecipesHeader() {
   return (
     <div className="recipes-header">
