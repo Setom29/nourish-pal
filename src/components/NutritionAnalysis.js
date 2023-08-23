@@ -1,25 +1,23 @@
 import React, { useState } from 'react';
+import {searchRecipes} from "../requests/searchRecipes"
 
 function RecipeSearch() {
   const [ingredients, setIngredients] = useState('')
   const [recipes, setRecipes] = useState([])
 
-  const appId = '9e209a10'
-  const appKey = 'c73dcc9bacfbda03002092bc1891785c'
-
   const handleIngredientsChange = (e) => {
     setIngredients(e.target.value)
   };
 
-  const searchRecipes = async () => {
-    try {
-      const response = await fetch(`https://api.edamam.com/search?q=${ingredients}&app_id=${appId}&app_key=${appKey}`)
-      const data = await response.json()
-      setRecipes(data.hits)
-    } catch (error) {
-      console.error('Error fetching recipes:', error)
+  useEffect(() => {
+    async function fetchData() {
+      let response = [];
+
+      response = await searchRecipes(ingredients);
+      setRecipes(response);
+
     }
-  };
+  }, [ingredients]);
 
   return (
     <div>
