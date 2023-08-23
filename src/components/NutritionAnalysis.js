@@ -4,8 +4,8 @@ function RecipeSearch() {
   const [ingredients, setIngredients] = useState('')
   const [recipes, setRecipes] = useState([])
 
-  const appId = 'bd84d986'
-  const appKey = 'd65097340284a57015c659a298e1eccb'
+  const appId = '9e209a10'
+  const appKey = 'c73dcc9bacfbda03002092bc1891785c'
 
   const handleIngredientsChange = (e) => {
     setIngredients(e.target.value)
