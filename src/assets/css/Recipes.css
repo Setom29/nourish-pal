@@ -1,0 +1,23 @@
+.recipe-list-header {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.recipe-list-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: stretch;
+    justify-items: stretch;
+  }
+  
+@media (max-width: 1250px) {
+    .recipe-list-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+}
+  
+@media (max-width: 750px) {
+    .recipe-list-container {
+        grid-template-columns: repeat(1, 1fr);
+      }
+}
