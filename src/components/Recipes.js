@@ -24,7 +24,7 @@ function Recipes({recipes, favRecipes, isFavorites, setRecipes, setFavRecipes}) 
         <div className="recipe-list-container">
             {recipes.map((recipe, index) => <RecipeCard recipe={recipe} 
                                                         isInFav = {isFavorites || indexOfFavRecipe(recipe) !== -1} 
-                                                    a    toggleFav = {toggleFav}
+                                                        toggleFav = {toggleFav}
                                                         key={index}/> )}
         </div>
     </> );
