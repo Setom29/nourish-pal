@@ -23,7 +23,7 @@ function SearchPanel({setRecipes, filters}) {
     }
     
     fetchData()
-  }, [filters, ingredients])
+  }, [])
 
   return (
     <div>
