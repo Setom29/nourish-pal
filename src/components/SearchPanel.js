@@ -10,18 +10,20 @@ function SearchPanel({setRecipes, filters}) {
   }
 
   const searchForRecipes = async () => {
-    const response = await fetchRecipes(ingredients, filters)
+    const currentFilters = filters
+    const response = await fetchRecipes(ingredients, currentFilters)
     setRecipes(response)
   }
 
   useEffect(() => {
+    const currentFilters = filters
     async function fetchData() {
-      const response = await fetchRecipes(ingredients, filters)
+      const response = await fetchRecipes(ingredients, currentFilters)
       setRecipes(response)
     }
     
     fetchData()
-  }, [])
+  }, [filters, ingredients])
 
   return (
     <div>
